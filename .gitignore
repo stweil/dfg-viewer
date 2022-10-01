@@ -12,3 +12,8 @@ composer.lock
 .env
 Docker/build/extensions
 !Docker/build/extensions/.gitkeep
+/Resources/Public/Css/allStyles.css
+/Resources/Public/Css/rte.css
+/Resources/Public/Css/webStyles.css
+/Resources/Public/JavaScript/allScripts.js
+/Resources/Public/JavaScript/webScripts.js
