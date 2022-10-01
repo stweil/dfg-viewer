@@ -7,3 +7,8 @@ Documentation-GENERATED-temp/
 public/
 vendor/
 composer.lock
+/Resources/Public/Css/allStyles.css
+/Resources/Public/Css/rte.css
+/Resources/Public/Css/webStyles.css
+/Resources/Public/JavaScript/allScripts.js
+/Resources/Public/JavaScript/webScripts.js
