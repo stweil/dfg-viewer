@@ -28,7 +28,7 @@ jobs:
     - name: Install and run Grunt
       working-directory: ./Build
       run: |
-        npm install -g grunt-cli
+        npm install -g grunt
         npm audit fix
         echo "Running `grunt less`"
         grunt less
