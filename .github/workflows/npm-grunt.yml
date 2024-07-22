@@ -35,7 +35,7 @@ jobs:
     - name: Install and run Grunt
       working-directory: ./Build
       run: |
-        npm install -g grunt
+        # npm install -g grunt
         npm audit fix
     - name: Install and run Grunt
       working-directory: ./Build
