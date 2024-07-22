@@ -22,9 +22,16 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: npm
-        cache-dependency-path: './Build/package-lock.json'
+        # cache: npm
+        # cache-dependency-path: './Build/package-lock.json'
 
+    - name: Install and run Grunt
+      working-directory: ./Build
+      run: |
+        type node
+        type npm
+        node --version
+        npm --version
     - name: Install and run Grunt
       working-directory: ./Build
       run: |
