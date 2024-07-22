@@ -30,10 +30,16 @@ jobs:
       run: |
         npm install -g grunt
         npm audit fix
+    - name: Install and run Grunt
+      working-directory: ./Build
+      run: |
         echo "Running `grunt less`"
-        grunt less
+        npx grunt less
+    - name: Install and run Grunt
+      working-directory: ./Build
+      run: |
         echo "Running `grunt terser`"
-        grunt terser
+        npx grunt terser
 
     - name: Test for changes
       working-directory: ./
