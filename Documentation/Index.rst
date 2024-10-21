@@ -10,7 +10,7 @@ dfgviewer* extension.
 Installation
 ============
 
-The current release 6.1 may be used with TYPO3 10.4 or TYPO3 11.5 LTS.
+The current release 6.1 may be used with TYPO3 11.5 or TYPO3 12.4 LTS.
 
 The extension is based on `Kitodo.Presentation (dlf) <https://github.com/kitodo/kitodo-presentation>`_ and `SLUB DigitalCollections (slub_digitalcollections) <https://github.com/slub/slub_digitalcollections>`. Before you can start to
 use the *DFG Viewer (dfgviewer)* in your TYPO3 installation, you have to install
@@ -28,10 +28,10 @@ We recommend at least:
 * Memory: 2 GB
 * Disk: 20 GB
 
-Install a fresh TYPO3 11.5 LTS
+Install a fresh TYPO3 12.4 LTS
 -----------------------------
 
-To install a fresh TYPO3 11.5 system, try the following installation procedure with composer::
+To install a fresh TYPO3 12.4 system, try the following installation procedure with composer::
 
     # Assuming the following settings:
     #   * the installation directory is /var/www/dfgviewer
@@ -42,10 +42,10 @@ To install a fresh TYPO3 11.5 system, try the following installation procedure w
     # remove /var/www/dfgviewer if it already exists or make sure it's really empty by ls -la dfgviewer/
     rm -r dfgviewer/
     # load full TYPO3 via composer
-    composer create-project typo3/cms-base-distribution:^11 dfgviewer
+    composer create-project typo3/cms-base-distribution:^12 dfgviewer
     # Install the TYPO3 system with the TYPO3-console
     cd dfgviewer/
-    ./vendor/bin/typo3cms install:setup
+    ./vendor/bin/typo3 setup
 
 Instead of using the TYPO3-console, you can you can switch to the web-based installation of TYPO3 in your
 browser. Just follow the 4 steps. You need your MySQL/MariaDB credentials of course.::
@@ -80,9 +80,9 @@ Your *typo3conf/LocalConfiguration.php* must contain this::
 
 You can set this easily with the TYPO3-console::
 
-    ./vendor/bin/typo3cms configuration:set 'FE/pageNotFoundOnCHashError' 0
+    ./vendor/bin/typo3 configuration:set 'FE/pageNotFoundOnCHashError' 0
 
-Now you have a working TYPO3 11.5 LTS installation and you can continue with composer
+Now you have a working TYPO3 12.4 LTS installation and you can continue with composer
 to install DFG-Viewer extension.
 
 
@@ -92,7 +92,7 @@ Install DFG-Viewer and Kitodo.Presentation via Composer
 Composer commands::
 
     # make sure you haven't set the platform php version to 7.2
-    composer config platform.php 7.4
+    composer config platform.php
     # install DFG-Viewer extension
     composer require slub/dfgviewer:^6.1
 
