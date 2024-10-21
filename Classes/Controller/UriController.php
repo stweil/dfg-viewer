@@ -112,26 +112,30 @@ class UriController extends AbstractController
             return;
         }
 
-        // Get persistent identifier of page.
-        $uriPage = GeneralUtility::trimExplode(' ', $doc->physicalStructureInfo[$doc->physicalStructure[$this->requestData['page']]]['contentIds'], TRUE);
+        if (isset($this->requestData['page'])) {
+            // Get persistent identifier of page.
+            $uriPage = GeneralUtility::trimExplode(' ', $doc->physicalStructureInfo[$doc->physicalStructure[$this->requestData['page']]]['contentIds'], TRUE);
 
-        if (!empty($uriPage)) {
-            $uris = [];
+            if (!empty($uriPage)) {
+                $uris = [];
 
-            foreach ($uriPage as $uri) {
-                if (Helper::isValidHttpUrl($uri)) {
-                    $uris[] = $uri;
-                } elseif (strpos($uri, 'urn:') === 0) {
-                    if (strpos($uri, '/fragment/') === false) {
-                        $uris[] = 'https://nbn-resolving.de/' . $uri;
-                    } else {
-                        $uris[] = 'https://nbn-resolving.org/' . $uri;
+                foreach ($uriPage as $uri) {
+                    if (Helper::isValidHttpUrl($uri)) {
+                        $uris[] = $uri;
+                    } elseif (strpos($uri, 'urn:') === 0) {
+                        if (strpos($uri, '/fragment/') === false) {
+                            $uris[] = 'https://nbn-resolving.de/' . $uri;
+                        } else {
+                            $uris[] = 'https://nbn-resolving.org/' . $uri;
+                        }
                     }
                 }
-            }
-            if (!empty($uris)) {
-                $this->view->assign('uriPages', $uris);
+                if (!empty($uris)) {
+                    $this->view->assign('uriPages', $uris);
+                }
             }
         }
+
+        return $this->htmlResponse();
     }
 }
