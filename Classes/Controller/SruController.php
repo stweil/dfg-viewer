@@ -27,7 +27,6 @@ namespace Slub\Dfgviewer\Controller;
 
 use Kitodo\Dlf\Common\MetsDocument;
 use Kitodo\Dlf\Controller\AbstractController;
-use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -48,7 +47,7 @@ class SruController extends AbstractController
      *
      * @return void
      */
-    public function mainAction(): ResponseInterface
+    public function mainAction(): void
     {
         // Load current document.
         $this->loadDocument();
@@ -57,7 +56,7 @@ class SruController extends AbstractController
             || !$this->document->getCurrentDocument() instanceof MetsDocument
         ) {
             // Quit without doing anything if required variables are not set.
-            return $this->htmlResponse();
+            return;
         }
 
         // Get digital provenance information.
@@ -74,7 +73,7 @@ class SruController extends AbstractController
 
         if (empty($sruLink)) {
             // Quit without doing anything if link is not set.
-            return $this->htmlResponse();
+            return;
         }
 
         $actionUrl = $this->uriBuilder->reset()
