@@ -45,7 +45,6 @@ class SruController extends AbstractController
 {
     /**
      * The main method of the controller
-     * @xglobal $GLOBALS
      * @return ResponseInterface
      */
     public function mainAction(): ResponseInterface
@@ -78,7 +77,6 @@ class SruController extends AbstractController
         }
 
         $pageArguments = $this->request->getAttribute('routing');
-
         $actionUrl = $this->uriBuilder->reset()
             ->setTargetPageUid($pageArguments->getPageId())
             ->setCreateAbsoluteUri(true)
