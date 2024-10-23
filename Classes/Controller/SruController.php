@@ -45,7 +45,7 @@ class SruController extends AbstractController
 {
     /**
      * The main method of the controller
-     *
+     * @xglobal $GLOBALS
      * @return ResponseInterface
      */
     public function mainAction(): ResponseInterface
@@ -77,8 +77,10 @@ class SruController extends AbstractController
             return $this->htmlResponse();
         }
 
+        $pageArguments = $this->request->getAttribute('routing');
+
         $actionUrl = $this->uriBuilder->reset()
-            ->setTargetPageUid($GLOBALS['TSFE']->id)
+            ->setTargetPageUid($pageArguments->getPageId())
             ->setCreateAbsoluteUri(true)
             ->build();
 
