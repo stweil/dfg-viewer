@@ -60,11 +60,11 @@ lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.nonWrappedTag >
 # -------------------------------
 # Diverses
 # -------------------------------
-[getTSFE() && getTSFE().id == {$config.rootPid}]
+[getTSFE() && getTSFE().id == {$plugin.tx_dfgviewer.rootPid}]
 page.bodyTag = <body class="website home">
 [END]
 
-[getTSFE() && getTSFE().id == {$config.kitodoPageView}]
+[getTSFE() && getTSFE().id == {$plugin.tx_dfgviewer.kitodoPageView}]
 page {
   bodyTag = <body class="dfgviewer">
   10 {
