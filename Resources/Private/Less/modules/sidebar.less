@@ -52,8 +52,10 @@
                 height: 100%;
                 color: #fff;
                 .text-hide();
-                background: url('../Images/dfgviewerLogo.svg') no-repeat center center;
-                background-size: 200px 35px;
+                background-image: url('../Images/LadenburgLogo.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
                 display: block;
             }
         }
@@ -172,14 +174,14 @@
         @media screen and (min-width: @tabletLandscapeViewportWidth) {
             position: absolute;
             top: 6px;
-            background: transparent;
+            background-color: transparent;
             overflow: visible;
             h1 {
                 top: 15px;
                 left: 30px;
                 max-width: 45%;
                 a {
-                    background-size: 100% auto;
+                    background-size: 100% contain;
                 }
             }
             nav {
