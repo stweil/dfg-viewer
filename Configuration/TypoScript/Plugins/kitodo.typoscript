@@ -130,7 +130,7 @@ plugin.tx_dlf_pageview {
     settings {
         features =
         elementId = tx-dfgviewer-map-0
-        multiViewType = composition
+        # multiViewType = composition
     }
 }
 
